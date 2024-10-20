@@ -37,27 +37,27 @@ A infraestrutura criada inclui os seguintes componentes:
 **Instalação Automática do Nginx:**
 - No arquivo ec2.tf, o bloco user_data foi modificado para instalar e iniciar o servidor Nginx automaticamente após a criação da instância.
   
-  -```bash
+```
 user_data = <<-EOF
-#!/bin/bash
-echo "Update the server"
-echo "------------------------"
-sudo apt-get update
-sudo apt-get upgrade -y
+  #!/bin/bash
+  echo "Update the server"
+  echo "------------------------"
+  sudo apt-get update
+  sudo apt-get upgrade -y
 
-echo "Install Nginx"
-echo "------------------------"
-sudo apt-get install nginx -y
-
-echo "Starting Nginx"
-echo "------------------------"
-sudo systemctl start nginx
-
-echo "Enable Nginx to start on boot"
-echo "------------------------"
-sudo systemctl enable nginx
-EOF
-
+  echo "Install Nginx"
+  echo "------------------------"
+  sudo apt-get install nginx -y
+  
+  echo "Starting Nginx"
+  echo "------------------------"
+  sudo systemctl start nginx
+  
+  echo "Enable Nginx to start on boot"
+  echo "------------------------"
+  sudo systemctl enable nginx
+  EOF
+```
 -Obs.: o arquivo foi colocado dentro file chamado "script.sh" e o meu user_data ficou user_data = file("script.sh")
 
 **Geração Dinâmica da Key Pair**
@@ -73,21 +73,33 @@ EOF
    - Ter uma conta na [AWS](https://aws.amazon.com/) com as credenciais configuradas.
   
 2. **Clonar o repositório**:
-
+    ```
    - git clone https://github.com/Edugon0/Desafio_DevOps
-   - cd Desafio_DevOps
+    ```
+   - Localize o diretório onde você clonou o repositório em sua máquina e execute o seguinte comando
+    - EX:
+     ```
+     cd C:\Users\eduar\Documents\DevOps
+     ```
 
 3. **Inicializar o Terraform (será necessario para rastreará os arquivos de configuração)**:
+   ```
     - terraform init
-
-4. **Verificar o plano de execução**:
+    ```
+5. **Verificar o plano de execução**:
+   ```
     - terraform plan
+   ```
 
-5. **Aplicar a configuração:**:
+7. **Aplicar a configuração:**:
+   ```
     - terraform apply
+   ```
     
 3. **Destruir a infraestrutura (se necessário):**:
+   ```
     - terraform destroy
+   ```
 
 - Obs.: Certifique-se de que sua AWS está configurada na região us-east-1 ao rodar o projeto, pois essa é a região definida no código. Além disso, ao testar o servidor Nginx, lembre-se de acessar via HTTP (porta 80), uma vez que a configuração foi feita para permitir o tráfego HTTP, e não HTTPS.
 
