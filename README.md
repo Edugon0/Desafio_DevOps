@@ -36,7 +36,8 @@ A infraestrutura criada inclui os seguintes componentes:
 
 **Instalação Automática do Nginx:**
 - No arquivo ec2.tf, o bloco user_data foi modificado para instalar e iniciar o servidor Nginx automaticamente após a criação da instância.
-- user_data = <<-EOF
+-
+  user_data = <<-EOF
             #!/bin/bash
             echo "Update the server"
             echo "------------------------"
