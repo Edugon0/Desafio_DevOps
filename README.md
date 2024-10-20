@@ -36,7 +36,7 @@ A infraestrutura criada inclui os seguintes componentes:
 
 **Instalação Automática do Nginx:**
 - No arquivo ec2.tf, o bloco user_data foi modificado para instalar e iniciar o servidor Nginx automaticamente após a criação da instância.
--
+- file
   user_data = <<-EOF
             #!/bin/bash
             echo "Update the server"
@@ -72,8 +72,8 @@ A infraestrutura criada inclui os seguintes componentes:
   
 2. **Clonar o repositório**:
 
-   git clone https://github.com/Edugon0/Desafio_DevOps
-   cd Desafio_DevOps
+   - git clone https://github.com/Edugon0/Desafio_DevOps
+   - cd Desafio_DevOps
 
 3. **Inicializar o Terraform (será necessario para rastreará os arquivos de configuração)**:
     - terraform init
