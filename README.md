@@ -72,9 +72,9 @@ user_data = <<-EOF
    - Ter o [Terraform](https://www.terraform.io/downloads.html) instalado.
    - Ter uma conta na [AWS](https://aws.amazon.com/) com as credenciais configuradas.
   
-2. **Clonar o repositório**:
+2. **Clonar o repositório**
     ```
-   - git clone https://github.com/Edugon0/Desafio_DevOps
+    git clone https://github.com/Edugon0/Desafio_DevOps
     ```
    - Localize o diretório onde você clonou o repositório em sua máquina e execute o seguinte comando
     - EX:
@@ -84,22 +84,28 @@ user_data = <<-EOF
 
 3. **Inicializar o Terraform (será necessario para rastreará os arquivos de configuração)**:
    ```
-    - terraform init
+     terraform init
     ```
-5. **Verificar o plano de execução**:
+5. **Verificar o plano de execução**
    ```
-    - terraform plan
+     terraform plan
    ```
 
-7. **Aplicar a configuração:**:
+7. **Aplicar a configuração:**
    ```
-    - terraform apply
+     terraform apply
    ```
     
-3. **Destruir a infraestrutura (se necessário):**:
+3. **Destruir a infraestrutura (se necessário):**
    ```
-    - terraform destroy
+     terraform destroy
    ```
+4. Acesso à instância
+  -Para acessar a instância, utilize a nova chave SSH:
+   ```
+   ssh -i /caminho/para/nova-chave.pem ubuntu@<IP-da-instância>
+   ```
+   
 
 - Obs.: Certifique-se de que sua AWS está configurada na região us-east-1 ao rodar o projeto, pois essa é a região definida no código. Além disso, ao testar o servidor Nginx, lembre-se de acessar via HTTP (porta 80), uma vez que a configuração foi feita para permitir o tráfego HTTP, e não HTTPS.
 
