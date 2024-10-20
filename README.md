@@ -36,26 +36,28 @@ A infraestrutura criada inclui os seguintes componentes:
 
 **Instalação Automática do Nginx:**
 - No arquivo ec2.tf, o bloco user_data foi modificado para instalar e iniciar o servidor Nginx automaticamente após a criação da instância.
-- file
-  user_data = <<-EOF
-            #!/bin/bash
-            echo "Update the server"
-            echo "------------------------"
-            sudo apt-get update
-            sudo apt-get upgrade -y
+  
+  -```bash
+user_data = <<-EOF
+#!/bin/bash
+echo "Update the server"
+echo "------------------------"
+sudo apt-get update
+sudo apt-get upgrade -y
 
-            echo "Install Nginx"
-            echo "------------------------"
-            sudo apt-get install nginx -y
+echo "Install Nginx"
+echo "------------------------"
+sudo apt-get install nginx -y
 
-            echo "Starting Nginx"
-            echo "------------------------"
-            sudo systemctl start nginx
+echo "Starting Nginx"
+echo "------------------------"
+sudo systemctl start nginx
 
-            echo "Enable Nginx to start on boot"
-            echo "------------------------"
-            sudo systemctl enable nginx
-            EOF
+echo "Enable Nginx to start on boot"
+echo "------------------------"
+sudo systemctl enable nginx
+EOF
+
 -Obs.: o arquivo foi colocado dentro file chamado "script.sh" e o meu user_data ficou user_data = file("script.sh")
 
 **Geração Dinâmica da Key Pair**
