@@ -8,6 +8,7 @@ Este projeto provisiona uma infraestrutura na AWS utilizando **Terraform** para 
 - `output.tf`: Contém as saídas da infraestrutura, incluindo chaves privadas e IPs públicos.
 - `security-group.tf`: Define os grupos de segurança para permitir o tráfego de entrada e saída.
 - `variables.tf`: Contém variáveis utilizadas no projeto.
+- `ec2.tf`: contém a definição da instância EC2 e a automação necessária para provisionar o servidor web Nginx.
 
 -obs.: A divisão do arquivo main.tf em vários arquivos melhora a organização e o entendimento do projeto. Essa abordagem segue as boas práticas, pois facilita a visualização e a manutenção de cada componente da infraestrutura de forma isolada, tornando o código mais modular e fácil de modificar ou expandir no futuro.
 
