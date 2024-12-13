@@ -1,4 +1,4 @@
-# Desafio DevOps - VExpenses
+# Desafio DevOps
 
 Este projeto provisiona uma infraestrutura na AWS utilizando **Terraform** para criar uma instância EC2 com o sistema operacional Debian 12, além de configurar automaticamente o servidor Nginx na instância. A infraestrutura também inclui uma VPC, Subnet, Internet Gateway, Security Group e outras boas práticas de segurança.
 
